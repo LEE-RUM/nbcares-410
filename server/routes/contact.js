@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 router.get('/', function(req, res){
-    res.send('you made a GET request to /contact')
+    res.sendFile(path.join(__dirname, '../../client/contact.html'));
 })
 
 module.exports = router;
