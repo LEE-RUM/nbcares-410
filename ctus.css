@@ -1,0 +1,13 @@
+body{
+    background-color: #fafafa;
+}
+.container{
+background-color: white;
+    margin: 5%;
+}
+#info{
+    font-size: 1.2em;
+}
+.footer{
+    background-color: aliceblue;
+}
