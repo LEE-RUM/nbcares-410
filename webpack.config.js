@@ -9,7 +9,7 @@ const ASSET_PATH = process.env.ASSET_PATH || './'
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: './client/main.js',
+  entry: './public/main.js',
   resolve: {
     extensions: [ '.js' ]
   },
@@ -51,15 +51,16 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname + '/client', 'dist'),
-    publicPath: ASSET_PATH
+    path: path.resolve(__dirname + '/public', 'dist'),
+    publicPath: ASSET_PATH,
+    clean: true
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'main.css'
     }),
     new HtmlWebpackPlugin({
-      template: 'client/calendar.html'
+      template: 'public/calendar.html'
     }),
     new LinkTypePlugin({
       '*.css' : 'text/css'

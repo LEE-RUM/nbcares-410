@@ -9,6 +9,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './main.css';
 
+// import { initializeApp } from 'firebase/app';
+// import { getAnalytics } from "firebase/analytics";
+// import { getDatabase } from "firebase/database";
+// import { firebaseConfig } from '../.firebaseConfig.js'
+
+
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
+// // Get a reference to the database service
+// const database = getDatabase(app);
+
+// console.log(db.firebaseConfig)
+
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
