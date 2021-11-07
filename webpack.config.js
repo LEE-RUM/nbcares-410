@@ -1,22 +1,17 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
 
 // Try the environment variable, otherwise use root
 const ASSET_PATH = process.env.ASSET_PATH || './'
 
 module.exports = {
+  watch: true,
   mode: 'development',
   devtool: 'source-map',
   entry: './public/main.js',
   resolve: {
     extensions: [ '.js' ]
-  },
-  target: 'node',
-  node: {
-    __dirname: false,
-    __filename: false,
   },
   module: {
     rules: [
@@ -58,9 +53,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'main.css'
-    }),
-    new HtmlWebpackPlugin({
-      template: 'public/calendar.html'
     }),
     new LinkTypePlugin({
       '*.css' : 'text/css'
