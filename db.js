@@ -17,6 +17,14 @@ function writeUserData(userId, name, email) {
   //adding a user with id 1 to the db
   writeUserData(1,'test','test@test.com')
   
+  function writeEventData(EventId, eventName){
+    const db = getDatabase();
+    set(ref(db, 'events/' + EventId), {
+      name: eventName,
+      
+    });
+  }
+  writeEventData(1,'test')
   
   //reading user 1 info from db
   let userId = 1;
@@ -30,4 +38,4 @@ function writeUserData(userId, name, email) {
     }
   }).catch((error) => {
     console.error(error);
-  });
+  }); 
