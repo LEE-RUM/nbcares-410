@@ -41,3 +41,10 @@
   font-size: 24px;
   font-weight: bold;
 }
+#modalbtn{
+  font-size: 12px ;
+  float: right;
+  position: relative;
+  right: 180px;
+  top: 10px;
+}
