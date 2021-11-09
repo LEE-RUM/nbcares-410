@@ -1,18 +1,25 @@
-.bi-facebook{
+#hero{
+    height: 100vh;
+    background-color: #132743;
+}
+
+#resources{
+    height: 100vh;
+    background-color: #fcfefe;
+}
+
+#footer{
+    background-color: #fcfefe;
+}
+
+.bi-file-earmark-pdf{
     font-size: 45px;
+    color: red;
 }
 
-.bi-instagram{
-    font-size: 45px;
-    color: mediumvioletred;
+.card{
+    background-color: #ececec;
 }
 
-.bi-twitter{
-    font-size: 45px;
-}
 
-.carousel-inner {
 
-margin: auto;
-
-}
