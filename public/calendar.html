@@ -42,14 +42,29 @@
       </div>
   </div>
 </nav>
-      <button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
-        Event Form
-    </button>
-    
-    <div id='calendar-container'>
-      <div id='calendar'></div>
-    
-      
+
+<button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
+  Event Form
+</button>
+
+<div id='calendar-container'>
+  <div id='calendar'>
+    <div id="calendarModal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                  <h4 id="modalTitle" class="modal-title"></h4>
+              </div>
+              <div id="modalBody" class="modal-body"> </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+      </div>
+
+  </div>
       
     </div>
 
@@ -124,5 +139,5 @@
 </div>
   </body>
   <script src='dist/main.js'></script>
-  <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script> -->
 </html>
