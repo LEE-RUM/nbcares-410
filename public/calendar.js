@@ -21,6 +21,13 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import './main.css';
 
 
+// const onEventClick = function(info) {
+//   console.log('event clicked', info.event.title)
+//   console.log(document.getElementById('calendarModal'))
+//   // $('#modalTitle').html('test');
+//   // $('#modalBody').html('test');
+//   // $('#calendarModal').modal();
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
@@ -34,15 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },  
-    // eventClick: function(info) {
-    //   alert(alert('Event: ' + info.event.title))
-    // },
-    // eventClick:  function(info) {
-    //   // console.log('event clicked', info.event.title)
-    //   // $('#modalTitle').html('test');
-    //   // $('#modalBody').html('test');
-    //   $('#calendarModal').modal();
-    // },
+    eventClick: function(info) {
+      alert(alert('Event: ' + info.event.title))
+    },
     navLinks: true, // can click day/week names to navigate views
     editable: true,
     dayMaxEvents: true, // allow "more" link when too many events
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
     id: 'a',
     title: 'Example Event',
     start: '2021-11-10T12:00:00',
-    location:'test location'
+    location:'test location',
+    description: 'test description'
   }
 ];
   eventsPromise.then((res) => {
