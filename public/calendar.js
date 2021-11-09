@@ -11,7 +11,7 @@ import 'bootstrap'
 // writeEventData(2,'test2')
 // // getEventData();
 // writeEventData(3, 'test3')
-import eventsPromise from '../db.js'
+// import eventsPromise from '../db.js'
 
 
 
@@ -39,54 +39,47 @@ document.addEventListener('DOMContentLoaded', function() {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      right: 'dayGridMonth,listWeek'
     },  
-    eventClick: function(info) {
-      alert(alert('Event: ' + info.event.title))
-    },
+    // eventClick: function(info) {
+    //   alert(alert('Event: ' + info.event.title))
+    // },
     navLinks: true, // can click day/week names to navigate views
     editable: true,
-    dayMaxEvents: true, // allow "more" link when too many events
+    dayMaxEvents: true,
+    eventMaxStack: 1,
+    displayEventTime: true,
     events: [
-      // {
-      //   id: 'a',
-      //   title: 'Example Event',
-      //   start: '2021-10-26T12:00:00'
-      // },  
-      // {
-      //   title: 'Example Event 5',
-      //   start: '2021-10-28T12:30:00'
-      // },  
-      // {
-      //   title: 'Example Event 3',
-      //   start: '2021-10-27T12:00:00'
-      // },  
-      // {
-      //   title: 'Example Event 2',
-      //   start: '2021-10-26T16:00:00'
-      // },  
-      // {
-      //   title: 'Example Event 1',
-      //   start: '2021-10-26T14:00:00'
-      // },  
+      {
+        title: 'Food Pantry',
+        start: '2021-11-10T11:30:00'
+      },  
+      {
+        title: 'Clothing Drive',
+        start: '2021-11-10T11:00:00'
+      },  
+      {
+        title: 'Hiring Event',
+        start: '2021-11-11T09:00:00'
+      }
     ]  
   });  
   
   // calendar.render();
-  let eventsArray = [      
-  {
-    id: 'a',
-    title: 'Example Event',
-    start: '2021-11-10T12:00:00',
-    location:'test location',
-    description: 'test description'
-  }
-];
-  eventsPromise.then((res) => {
-    console.log('these are events', res)
-    // calendar.removeAllEvents()
-    calendar.addEventSource(eventsArray)
-  })  
+//   let eventsArray = [      
+//   {
+//     id: 'a',
+//     title: 'Example Event',
+//     start: '2021-11-10T12:00:00',
+//     location:'test location',
+//     description: 'test description'
+//   }
+// ];
+//   eventsPromise.then((res) => {
+//     console.log('these are events', res)
+//     // calendar.removeAllEvents()
+//     calendar.addEventSource(eventsArray)
+//   })  
   calendar.render()
   // console.log(calendar.getEvents())
   // console.log(calendar.getEventById('a'))
