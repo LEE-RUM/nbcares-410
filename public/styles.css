@@ -1,12 +1,12 @@
+body{
+   background-color: #fcfefe;
+}
+
 #hero{
     height: 100vh;
     background-color: #132743;
 }
 
-#resources{
-    height: 100vh;
-    background-color: #fcfefe;
-}
 
 #footer{
     background-color: #fcfefe;
@@ -21,5 +21,6 @@
     background-color: #ececec;
 }
 
-
-
+.footer{
+    background-color: aliceblue;
+}
