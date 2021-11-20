@@ -7,6 +7,7 @@ import bootstrapPlugin from '@fullcalendar/bootstrap';
 import 'bootstrap'
 
 // import {writeEventData} from '../db.js'
+import { eventsPromise } from '../db';
 
 // writeEventData(2,'test2')
 // // getEventData();
@@ -28,7 +29,8 @@ import './main.css';
 //   // $('#modalBody').html('test');
 //   // $('#calendarModal').modal();
 // }
-
+// let eventsArray = getAllEvents()
+// let eventsArray = eventsPromise.then((events)=>eventsArray=events)
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
   
@@ -42,44 +44,51 @@ document.addEventListener('DOMContentLoaded', function() {
       right: 'dayGridMonth,listWeek'
     },  
     // eventClick: function(info) {
-    //   alert(alert('Event: ' + info.event.title))
-    // },
-    navLinks: true, // can click day/week names to navigate views
-    editable: true,
-    dayMaxEvents: true,
-    eventMaxStack: 1,
-    displayEventTime: true,
-    events: [
-      {
-        title: 'Food Pantry',
-        start: '2021-11-10T11:30:00'
-      },  
-      {
-        title: 'Clothing Drive',
-        start: '2021-11-10T11:00:00'
-      },  
-      {
-        title: 'Hiring Event',
-        start: '2021-11-11T09:00:00'
-      }
-    ]  
-  });  
-  
-  // calendar.render();
-//   let eventsArray = [      
-//   {
-//     id: 'a',
-//     title: 'Example Event',
-//     start: '2021-11-10T12:00:00',
-//     location:'test location',
-//     description: 'test description'
-//   }
-// ];
-//   eventsPromise.then((res) => {
-//     console.log('these are events', res)
-//     // calendar.removeAllEvents()
-//     calendar.addEventSource(eventsArray)
-//   })  
+      //   alert(alert('Event: ' + info.event.title))
+      // },
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      dayMaxEvents: true,
+      eventMaxStack: 1,
+      displayEventTime: true,
+      events: [
+        {
+          title: 'Food Pantry',
+          start: '2021-11-10T11:30:00'
+        },  
+        {
+          title: 'Clothing Drive',
+          start: '2021-11-10T11:00:00'
+        },  
+        {
+          title: 'Hiring Event',
+          start: '2021-11-11T09:00:00'
+        }
+      ]  
+    });  
+    
+    // calendar.render();
+      // let eventsArray = [      
+      //   {
+      //       id: 'a',
+      //       title: 'Example Event',
+      //       start: '2021-11-15T12:00:00',
+      //       location:'test location',
+      //       description: 'test description'
+      //     }
+      //   ];
+        // calendar.addEventSource(eventsArray)
+        //   eventsPromise.then((res) => {
+          //     console.log('these are events', res)
+          //     // calendar.removeAllEvents()
+          //   })  
+          // eventsPromise.then((events)=>console.log(events))
+  let eventsArray = [];
+  eventsPromise.then((events)=> {
+    eventsArray = Object.values(events)
+    console.log('events array:', eventsArray)
+    calendar.addEventSource(eventsArray)
+  })
   calendar.render()
   // console.log(calendar.getEvents())
   // console.log(calendar.getEventById('a'))
