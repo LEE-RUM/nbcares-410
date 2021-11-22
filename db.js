@@ -84,19 +84,20 @@ let formId = 1;
     console.error(error);
   });
 */
-document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,date,startTime,endTime,description) {
-    const db=getDatabase()
 
+document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,date,startTime,endTime,description,category) {
+    const db=getDatabase()
+    let formId=3
     name= document.getElementById('name').value
     organization= document.getElementById('organization').value
-    add= document.getElementById('address').value
+    address= document.getElementById('address').value
     phoneNumber= document.getElementById('phone').value
     date= document.getElementById('date').value
     startTime= document.getElementById('start-time').value
     endTime= document.getElementById('end-time').value
     description= document.getElementById('description').value
-
-        set(ref(db,'form/'), {
+    category=document.getElementById('SelectOption').value
+        set(ref(db,'form/'+ formId), {
             fullname : name,
             organization : organization ,
             address : address ,
@@ -104,7 +105,8 @@ document.getElementById('modalSub').addEventListener('click',function writeFormD
             date: date,
             startTime: startTime,
             endTime: endTime,
-            description: description
+            description: description,
+            category: category
             });}
 
 
