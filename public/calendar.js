@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
           trigger: 'hover',
           container: 'body',
           animation: true,
-          template: `<div class="tooltip" role="tooltip">
-          <div class="arrow"></div>
-          <div class="tooltip-inner"></div>
-          event location<br/> event description<br/>
-          event start time<br/> event end time</div>`
+          // template: `<div class="tooltip" role="tooltip">
+          // <div class="arrow"></div>
+          // <div class="tooltip-inner"></div>
+          // event location<br/> event description<br/>
+          // event start time<br/> event end time</div>`
         });
       },
       // events: [
