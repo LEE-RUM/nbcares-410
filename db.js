@@ -58,5 +58,66 @@ export default  get(child(dbRef, `events/`)).then((snapshot) => {
     }
   }).catch((error) => {
     console.error(error);
-  }); 
-  
+  });
+
+/*
+//Testing Form Data
+function writeFormData(formId, name, org) {
+    const db = getDatabase();
+    set(ref(db, 'form/' + formId), {
+      name: name,
+      org: org,
+    });
+  }
+writeFormData(1,'test-form name','test-form-org')
+
+let formId = 1;
+  const dbRefform = ref(getDatabase());
+  get(child(dbReffrom, `form/${formId}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log('data should appear here:')
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+*/
+document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,date,startTime,endTime,description) {
+    const db=getDatabase()
+
+    name= document.getElementById('name').value
+    organization= document.getElementById('organization').value
+    add= document.getElementById('address').value
+    phoneNumber= document.getElementById('phone').value
+    date= document.getElementById('date').value
+    startTime= document.getElementById('start-time').value
+    endTime= document.getElementById('end-time').value
+    description= document.getElementById('description').value
+
+        set(ref(db,'form/'), {
+            fullname : name,
+            organization : organization ,
+            address : address ,
+            phone: phoneNumber,
+            date: date,
+            startTime: startTime,
+            endTime: endTime,
+            description: description
+            });}
+
+
+
+
+
+
+
+)
+
+
+
+
+
+
+
