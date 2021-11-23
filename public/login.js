@@ -3,6 +3,7 @@
      getAuth,
      createUserWithEmailAndPassword,
      signInWithEmailAndPassword,
+     signOut,
    } from 'firebase/auth'
 // const auth = firebase.getAuth()
 // const createUserWithEmailAndPassword = firebase.createUserWithEmailAndPassword()
@@ -39,3 +40,4 @@ console.log(createUserWithEmailAndPassword)
       console.log(err.message)
     })
 })
+
