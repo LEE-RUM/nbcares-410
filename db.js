@@ -40,7 +40,7 @@ getUserData(userId)
 let testEventObject5 = {
   id: 5,
   title: 'Education Event',
-  start: '2021-11-15T12:00:00',
+  start: '2021-11-25T10:00:00',
   location:'test location',
   description: 'test description',
   category: 'Education'
@@ -49,10 +49,26 @@ let testEventObject5 = {
 let testEventObject6 = {
   id: 6,
   title: 'Housing Event',
-  start: '2021-11-17T12:00:00',
+  start: '2021-11-23T14:00:00',
   location:'test location',
   description: 'test description',
   category: 'Housing'
+}
+let testEventObject7 = {
+  id: 7,
+  title: 'Job Fair',
+  start: '2021-11-25T12:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Employment'
+}
+let testEventObject8 = {
+  id: 8,
+  title: 'Covid Testing',
+  start: '2021-11-26T14:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Healthcare'
 }
   
 export function writeEventData(eventObject){
@@ -68,6 +84,8 @@ export function writeEventData(eventObject){
   }
 writeEventData(testEventObject5)
 writeEventData(testEventObject6)
+writeEventData(testEventObject7)
+writeEventData(testEventObject8)
 
 
 
