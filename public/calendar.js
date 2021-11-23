@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
               }
               
               let filteredEvents = [];
-              document.getElementById('filter-submit').addEventListener("click", filterSubmit);
               function updateCalendar(){
                 for(let i in eventsArray){
                   let currentEvent=(eventsArray[i])
