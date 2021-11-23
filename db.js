@@ -39,18 +39,20 @@ getUserData(userId)
 
 let testEventObject5 = {
   id: 5,
-  title: 'Example Event',
+  title: 'Education Event',
   start: '2021-11-15T12:00:00',
   location:'test location',
-  description: 'test description'
+  description: 'test description',
+  category: 'Education'
 }
   
 let testEventObject6 = {
   id: 6,
-  title: 'Example Event',
+  title: 'Housing Event',
   start: '2021-11-17T12:00:00',
   location:'test location',
-  description: 'test description'
+  description: 'test description',
+  category: 'Housing'
 }
   
 export function writeEventData(eventObject){
@@ -60,7 +62,8 @@ export function writeEventData(eventObject){
       title: eventObject.title,
       start: eventObject.start,
       location: eventObject.location,
-      description: eventObject.description 
+      description: eventObject.description, 
+      category: eventObject.category
     });
   }
 writeEventData(testEventObject5)

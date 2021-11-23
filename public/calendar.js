@@ -15,9 +15,22 @@ import './main.css';
 import { eventsPromise } from '../db';
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
+
+  document.getElementById('housing-checkbox').addEventListener("click", myScript);
+  function myScript(){
+    if(this.checked){
+      console.log('checked')
+      
+    } else console.log('not checked');
+  }
+
+  //TODO: make array of events to add after submit button is pressed
+  //pass events to newEventsArray on condition that event.category=checkbox.id 
+  //for checked=true checkbox
+  //call updateEvents(newEventsArray) or something similar on submit button click
+
   // var calendarModal = document.getElementById('calendarModal')
   // console.log(calendarModal)
   
@@ -77,12 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
       //   }
       // ]  
     });  
-  
+  let housingSelected = document.getElementById('housing-checkbox').value;
   let eventsArray = [];
+  let eventsToShow = [];
   eventsPromise.then((events)=> {
-    eventsArray = Object.values(events)
     console.log('events array:', eventsArray)
-    calendar.addEventSource(eventsArray)
+    console.log(housingSelected)
+    
+    eventsArray = Object.values(events)
+      calendar.addEventSource(eventsArray)
+    
   })
   calendar.render()
   // console.log(calendar.getEvents())
