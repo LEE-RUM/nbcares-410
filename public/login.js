@@ -41,8 +41,7 @@ console.log(createUserWithEmailAndPassword)
 })
 
 
-const auth = getAuth()
-console.log(getAuth)
+
 console.log(signInWithEmailAndPassword)
 const loginForm = document.querySelector('.login')
 loginForm.addEventListener('submit', (e) => {
