@@ -216,3 +216,7 @@ body{
   border-radius: 5px;
   
 }
+
+#events-filtering{
+  float:right;
+}
