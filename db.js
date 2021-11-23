@@ -1,10 +1,15 @@
 import { initializeApp } from 'firebase/app';
+import {getAuth} from 'firebase/auth'
 // import { getAnalytics } from "firebase/analytics";
 import { firebaseConfig } from '/.firebaseConfig.js'
 import { getDatabase, ref, set, get, child } from "firebase/database";
 
+// console.log(getAuth)
+
 const app = initializeApp(firebaseConfig);
 // import { getAnalytics } from "firebase/analytics";
+
+// export let getAuthFunction = getAuth;
 
 function writeUserData(userId, name, email) {
     const db = getDatabase();
@@ -31,3 +36,5 @@ function writeUserData(userId, name, email) {
   }).catch((error) => {
     console.error(error);
   });
+
+  // export firebase;
