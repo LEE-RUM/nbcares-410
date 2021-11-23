@@ -50,11 +50,30 @@
 <div id='calendar-container'>
   <div id='calendar'>
   </div>
+  <div id="events-filtering" class="list-group">
+    <li class="list-group-item">Filter By Category:</li>
+    <label class="list-group-item">
+      <input id="Housing" class="form-check-input me-1" type="checkbox" value=false>
+      Housing
+    </label>
+    <label class="list-group-item">
+      <input id="Employment"class="form-check-input me-1" type="checkbox" value="-1">
+      Employment
+    </label>
+    <label class="list-group-item">
+      <input id="Education"class="form-check-input me-1" type="checkbox" value="-1">
+      Education
+    </label>
+    <label class="list-group-item">
+      <input id="Financial"class="form-check-input me-1" type="checkbox" value="-1">
+      Financial Literacy
+    </label>
+    <label class="list-group-item">
+      <input id="Healthcare"class="form-check-input me-1" type="checkbox" value="-1">
+      Healthcare
+    </label>
+  </div>
 </div>
-
-<!-- <div id='event-filtering'>
-    <p>event filter div</p>
-</div> -->
 
   <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
@@ -80,6 +99,11 @@
                       <br>
                       <input type="text" name="address" class="form-control" placeholder="Enter your Address" id="address">
               
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label"> Event Name</label>
+                      <br>
+                      <input type="text" name="eventName" class="form-control" placeholder="Enter Event Name" id="event-name">
                     </div>
                     <br>
                     <div class="form-group">

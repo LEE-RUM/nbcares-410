@@ -10,15 +10,23 @@
     margin:0 auto;
     margin-top: 80px;
   }
+
+  #calendar-container{
+    display: flex;
+  }
   
-  #filters {
+  #events-filtering{
+    margin-top: 15%;
+    display: flex;
+  }
+  /* #filters {
     height: 600px;
     width: 300px;
     display: inline-block;
     margin-left: 150px;
     border: 1px solid black;
     font-size: 20px;
-  }
+  } */
 
 #navbar{
   font-size: 24px;
