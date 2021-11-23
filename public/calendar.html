@@ -3,15 +3,143 @@
   <head>
     <meta charset='utf-8' />
     <link href='dist/main.css' rel='stylesheet' type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css" />
+
   </head>
   <body>
-    <div id ='navbar'>Navbar</div>
-    <div id='calendar-container'>
-      <div id='calendar'></div>
-      <div id='filters'>
-        Event Filters
+    <!-- Nav bar starts -->
+<nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+  <div class="container-xxl">
+
+      <a class="navbar-brand"  href="#">
+      <span class="text-secondary fw-bold">
+        NBCares
+      </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Resources</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="calendar.html">Calendar</a>
+              </li>
+              <li class="nav-item ms-2 d-none d-md-inline">
+                  <a class="btn btn-primary" href="login.html">LOGIN</a>
+              </li>
+
+          </ul>
       </div>
+  </div>
+</nav>
+
+<button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
+  Event Form
+</button>
+
+<div id='calendar-container'>
+  <div id='calendar'>
+  </div>
+</div>
+
+<!-- <div id='event-filtering'>
+    <p>event filter div</p>
+</div> -->
+
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="exampleModalLabel">NBCares Event Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="form-label">Organization</label>
+                        <input type="text" class="form-control" id="organization" name="organization" placeholder="Organization" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label class="form-label"> Address</label>
+                      <br>
+                      <input type="text" name="address" class="form-control" placeholder="Enter your Address" id="address">
+              
+                    </div>
+                    <br>
+                    <div class="form-group">
+                    <label class="form-label"> Phone Number</label>
+                    <br>
+                    <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone Number" id="phone">
+            
+                     </div>
+                     <br>
+                     <div class="form-group">
+                      <label class="form-label"> Event Date</label>
+                      <br>
+                      <input type="date" name="date" class="form-control"  id="date">
+              
+                     </div>
+                     <br>
+                       <div class="form-group">
+                        <label class="form-label"> Start Time</label>
+                        <br>
+                        <input type="text" name="start-time" class="form-control" placeholder="Time AM/PM"  id="start-time">
+                
+                         </div>
+                         <br>
+                         <div class="form-group">
+                          <label class="form-label"> End Time</label>
+                          <br>
+                          <input type="text" name="end-time" class="form-control" placeholder="Time AM/PM"  id="end-time">
+                  
+                           </div>
+                           <br>
+                           <div class="form-group">
+                            <label class="form-label"> Description</label>
+                            <textarea id="description" class="form-control" name="description" rows="8"></textarea>
+                            
+                    
+                             </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="form label"> Categories </label>
+                                <select class="form-select" id="SelectOption">
+                                    <option value="Housing"> Housing</option>
+                                    <option value="Employment"> Employment</option>
+                                    <option value="Education"> Education</option>
+                                    <option value="Financial Literacy"> Financial Literacy </option>
+                                    <option value="HealthCare"> Healthcare</option>
+
+                                </select>
+
+                            </div>
+
+
+                    <div class="modal-footer">
+                        <button type="submit" id="modalSub" class="btn btn-warning text-center">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
   </body>
   <script src='dist/main.js'></script>
+  <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
 </html>

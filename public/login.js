@@ -21,7 +21,6 @@ function signup(){
 
 
 const auth = getAuth()
-console.log('testing')
 console.log(getAuth)
 console.log(createUserWithEmailAndPassword)
   const signupForm = document.querySelector('.signup')
@@ -41,3 +40,24 @@ console.log(createUserWithEmailAndPassword)
     })
 })
 
+/*
+const auth = getAuth()
+console.log(getAuth)
+console.log(signInWithEmailAndPassword)
+const loginForm = document.querySelector('.login')
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const email = loginForm.email.value
+  const password = loginForm.password.value
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(cred => {
+      console.log('user logged in:', cred.user)
+      loginForm.reset()
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+})
+*/
