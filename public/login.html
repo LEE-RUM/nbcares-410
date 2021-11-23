@@ -108,7 +108,93 @@
 
 
 
+<button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
+    Event Form
+  </button>
 
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="exampleModalLabel">NBCares Event Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="form-label">Organization</label>
+                        <input type="text" class="form-control" id="organization" name="organization" placeholder="Organization" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label class="form-label"> Address</label>
+                      <br>
+                      <input type="text" name="address" class="form-control" placeholder="Enter your Address" id="address">
+              
+                    </div>
+                    <br>
+                    <div class="form-group">
+                    <label class="form-label"> Phone Number</label>
+                    <br>
+                    <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone Number" id="phone">
+            
+                     </div>
+                     <br>
+                     <div class="form-group">
+                      <label class="form-label"> Event Date</label>
+                      <br>
+                      <input type="date" name="date" class="form-control"  id="date">
+              
+                     </div>
+                     <br>
+                       <div class="form-group">
+                        <label class="form-label"> Start Time</label>
+                        <br>
+                        <input type="text" name="start-time" class="form-control" placeholder="Time AM/PM"  id="start-time">
+                
+                         </div>
+                         <br>
+                         <div class="form-group">
+                          <label class="form-label"> End Time</label>
+                          <br>
+                          <input type="text" name="end-time" class="form-control" placeholder="Time AM/PM"  id="end-time">
+                  
+                           </div>
+                           <br>
+                           <div class="form-group">
+                            <label class="form-label"> Description</label>
+                            <textarea id="description" class="form-control" name="description" rows="8"></textarea>
+                            
+                    
+                             </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="form label"> Categories </label>
+                                <select class="form-select" id="SelectOption">
+                                    <option value="Housing"> Housing</option>
+                                    <option value="Employment"> Employment</option>
+                                    <option value="Education"> Education</option>
+                                    <option value="Financial Literacy"> Financial Literacy </option>
+                                    <option value="HealthCare"> Healthcare</option>
+
+                                </select>
+
+                            </div>
+
+
+                    <div class="modal-footer">
+                        <button type="submit" id="modalSub" class="btn btn-warning text-center">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
         
 <!-- Option 1: Bootstrap Bundle with Popper -->
