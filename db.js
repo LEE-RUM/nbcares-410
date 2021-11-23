@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import {getAuth} from 'firebase/auth'
 // import { getAnalytics } from "firebase/analytics";
 import { firebaseConfig } from '/.firebaseConfig.js'
 import { getDatabase, ref, set, get, child } from "firebase/database";
@@ -6,6 +7,8 @@ import { getDatabase, ref, set, get, child } from "firebase/database";
 
 const app = initializeApp(firebaseConfig);
 // import { getAnalytics } from "firebase/analytics";
+
+// export let getAuthFunction = getAuth;
 
 function writeUserData(userId, name, email) {
     const db = getDatabase();
