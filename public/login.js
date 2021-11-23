@@ -40,7 +40,7 @@ console.log(createUserWithEmailAndPassword)
     })
 })
 
-/*
+
 const auth = getAuth()
 console.log(getAuth)
 console.log(signInWithEmailAndPassword)
@@ -60,4 +60,4 @@ loginForm.addEventListener('submit', (e) => {
       console.log(err.message)
     })
 })
-*/
+
