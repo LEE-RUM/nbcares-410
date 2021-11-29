@@ -1,9 +1,8 @@
 //  import {getAuth} from '../db.js'
  import {
-     getAuth,
-     createUserWithEmailAndPassword,
-     signInWithEmailAndPassword,
-     signOut,
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword, signOut
    } from 'firebase/auth'
 // const auth = firebase.getAuth()
 // const createUserWithEmailAndPassword = firebase.createUserWithEmailAndPassword()
@@ -40,10 +39,9 @@ console.log(createUserWithEmailAndPassword)
     })
 })
 
-
-const auth = getAuth()
-console.log(getAuth)
-console.log(signInWithEmailAndPassword)
+//const auth = getAuth()
+//console.log(getAuth)
+//console.log(signInWithEmailAndPassword)
 const loginForm = document.querySelector('.login')
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
