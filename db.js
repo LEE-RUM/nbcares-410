@@ -73,6 +73,15 @@ let testEventObject8 = {
   description: 'test description',
   category: 'Healthcare'
 }
+let testEventObject9 = {
+  id: 9,
+  title: 'Family Event',
+  start: '2021-11-27T16:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Family'
+}
+
   
 export function writeEventData(eventObject){
     const db = getDatabase();
@@ -89,7 +98,7 @@ writeEventData(testEventObject5)
 writeEventData(testEventObject6)
 writeEventData(testEventObject7)
 writeEventData(testEventObject8)
-
+writeEventData(testEventObject9)
 
 
 

@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
               document.getElementById('Education').addEventListener("click", isChecked);
               document.getElementById('Financial').addEventListener("click", isChecked);
               document.getElementById('Healthcare').addEventListener("click", isChecked);
+              document.getElementById('Mental').addEventListener("click", isChecked);
+              document.getElementById('Family').addEventListener("click", isChecked);
+              document.getElementById('Children').addEventListener("click", isChecked);
+
               function isChecked(){
                 if(this.checked){
                   console.log('checked')
