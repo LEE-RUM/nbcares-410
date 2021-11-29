@@ -4,19 +4,6 @@
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword, signOut
    } from 'firebase/auth'
-// const auth = firebase.getAuth()
-// const createUserWithEmailAndPassword = firebase.createUserWithEmailAndPassword()
-// import {getAuth} from 'firebase/auth'
-// console.log(getAuth)
-// writeUserData(2, 'test name', 'testemail')
-
-/* const auth = firebase.auth();
-
-function signup(){
-    let email = document.getElementById('email')
-    console.log(email)
-}
- */
 
 
 const auth = getAuth()
@@ -39,9 +26,7 @@ console.log(createUserWithEmailAndPassword)
     })
 })
 
-//const auth = getAuth()
-//console.log(getAuth)
-//console.log(signInWithEmailAndPassword)
+
 const loginForm = document.querySelector('.login')
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
