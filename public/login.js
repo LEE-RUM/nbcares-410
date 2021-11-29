@@ -38,6 +38,7 @@ loginForm.addEventListener('submit', (e) => {
     .then(cred => {
       console.log('user logged in:', cred.user)
       loginForm.reset()
+      window.location = 'welcome.html';
     })
     .catch(err => {
       console.log(err.message)
