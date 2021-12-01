@@ -19,6 +19,16 @@
     margin-top: 15%;
     display: flex;
   }
+  @media screen and (max-width:550px) {
+    #calendar-container{
+    display: grid;
+  }
+    #events-filtering{
+
+    padding: 20px;
+
+  }
+  }
   /* #filters {
     height: 600px;
     width: 300px;
