@@ -20,8 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
   let categorySelected = {
 
   }
+  let isSmallScreen = window.innerWidth < 500;
+  console.log(isSmallScreen)
   
-  
+  window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 500px)").matches) {
+      console.log("Screen width is at least 500px")
+      isSmallScreen = false
+      console.log(isSmallScreen)
+    } else {
+      console.log("Screen less than 500px")
+      isSmallScreen = true
+      console.log(isSmallScreen)
+    }
+  })
   
   //TODO: make array of events to add after submit button is pressed
   //pass events to newEventsArray on condition that event.category=checkbox.id 
@@ -41,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     var calendar = new Calendar(calendarEl, {
       eventDisplay: 'block',
-      // initialView: 'listWeek',
+      initialView: isSmallScreen ? 'listWeek': 'dayGridMonth',
       plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrapPlugin ],
       themeSystem: 'bootstrap',
-      headerToolbar: {
-        left: 'prev,next today',
+      headerToolbar: isSmallScreen ? {left:'prev,next',center:'',right:'title'} :{
+        left: 'prev,next,today',
         center: 'title',
         right: 'dayGridMonth,listWeek'
       },  
@@ -89,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });  
             
             let eventsArray = [];
+            console.log('small screen flag inside calendar:', isSmallScreen)
             
             eventsPromise.then((events)=> {
               console.log('events array:', eventsArray)
