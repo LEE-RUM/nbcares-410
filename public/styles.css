@@ -4,13 +4,9 @@ body{
 
 #hero{
     height: 100vh;
-    background-color: #132743;
+    background-color: #834655;
 }
 
-
-#footer{
-    background-color: #fcfefe;
-}
 
 .bi-file-earmark-pdf{
     font-size: 45px;
@@ -22,5 +18,5 @@ body{
 }
 
 .footer{
-    background-color: aliceblue;
+    background-color: #fcfefe;
 }

@@ -24,17 +24,17 @@
     display: grid;
     justify-content: center;
     width: 95%;
-    /* height: 750px */
-  }
+    height: 750px
+  } 
     #events-filtering{
-    /* margin: auto;
-    width: 75% */
+    margin: auto;
+    width: 75%
 
   }
   
   #calendar{
     
-    width: 100%
+    width: 75%
   }
   }
   /* #filters {
