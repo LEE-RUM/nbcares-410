@@ -144,17 +144,5 @@ let formId = 1;
   });
 */
 
-function getRandomInt() {
-  return Math.floor(Math.random() * 1000000);
-}
-
-console.log('randomInt=', getRandomInt())
-
-
-
-
-
-
-
 
 
