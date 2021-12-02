@@ -22,11 +22,19 @@
   @media screen and (max-width:550px) {
     #calendar-container{
     display: grid;
+    justify-content: center;
+    width: 95%;
+    /* height: 750px */
   }
     #events-filtering{
+    /* margin: auto;
+    width: 75% */
 
-    padding: 20px;
-
+  }
+  
+  #calendar{
+    
+    width: 100%
   }
   }
   /* #filters {
