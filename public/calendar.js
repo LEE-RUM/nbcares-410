@@ -14,8 +14,6 @@ import './main.css';
 // import {writeEventData} from '../db.js'
 import { eventsPromise } from '../db';
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
   // var calendarModal = document.getElementById('calendarModal')
