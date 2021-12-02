@@ -20,6 +20,7 @@ console.log(createUserWithEmailAndPassword)
     .then(cred => {
       console.log('user created:', cred.user)
       signupForm.reset()
+      window.location = 'index.html';
     })
     .catch(err => {
       console.log(err.message)
@@ -38,8 +39,8 @@ loginForm.addEventListener('submit', (e) => {
     .then(cred => {
       console.log('user logged in:', cred.user)
       loginForm.reset()
-      //window.location = 'welcome.html';
-    /alert("Succesful Login!");
+      window.location = 'index.html';
+    //alert("Succesful Login!");
     })
     .catch(err => {
       console.log(err.message)
