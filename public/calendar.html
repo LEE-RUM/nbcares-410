@@ -29,28 +29,32 @@
                   <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Resources</a>
+                  <a class="nav-link" href="index.html#resources">Resources</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="calendar.html">Calendar</a>
               </li>
-              <li class="nav-item ms-2 d-none d-md-inline">
+              <li class="nav-item ms-2 d-none d-md-inline" id="login-button">
                   <a class="btn btn-primary" href="login.html">LOGIN</a>
               </li>
+
 
           </ul>
       </div>
   </div>
 </nav>
 
-<button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
-  Event Form
-</button>
+
 
 <div id='calendar-container'>
   <div id='calendar'>
   </div>
   <div id="events-filtering" class="list-group">
+      <div class="text-center">
+      <button type="button" class="btn btn-primary" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">
+        Event Form
+        </button>
+      </div>
     <li class="list-group-item">Filter By Category:</li>
     <label class="list-group-item">
       <input id="Housing" class="form-check-input me-1" type="checkbox" value=false>
@@ -140,14 +144,14 @@
                        <div class="form-group">
                         <label class="form-label"> Start Time</label>
                         <br>
-                        <input type="text" name="start-time" class="form-control" placeholder="Time AM/PM"  id="start-time">
+                        <input type="text" name="start-time" class="form-control" placeholder="10:00"  id="start-time">
                 
                          </div>
                          <br>
                          <div class="form-group">
                           <label class="form-label"> End Time</label>
                           <br>
-                          <input type="text" name="end-time" class="form-control" placeholder="Time AM/PM"  id="end-time">
+                          <input type="text" name="end-time" class="form-control" placeholder="11:00"  id="end-time">
                   
                            </div>
                            <br>

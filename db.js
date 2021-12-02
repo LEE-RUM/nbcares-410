@@ -173,7 +173,7 @@ document.getElementById('modalSub').addEventListener('click',function writeFormD
             date: date,
             // startTime: startTime,
             start: start,
-            // endTime: endTime,
+            endTime: endTime,
             description: description,
             category: category
             });}
