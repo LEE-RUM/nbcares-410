@@ -42,19 +42,46 @@ getUserData(userId)
 
 let testEventObject5 = {
   id: 5,
-  title: 'Example Event',
-  start: '2021-11-15T12:00:00',
+  title: 'Education Event',
+  start: '2021-11-25T10:00:00',
   location:'test location',
-  description: 'test description'
+  description: 'test description',
+  category: 'Education'
 }
   
 let testEventObject6 = {
   id: 6,
-  title: 'Example Event',
-  start: '2021-11-17T12:00:00',
+  title: 'Housing Event',
+  start: '2021-11-23T14:00:00',
   location:'test location',
-  description: 'test description'
+  description: 'test description',
+  category: 'Housing'
 }
+let testEventObject7 = {
+  id: 7,
+  title: 'Job Fair',
+  start: '2021-11-25T12:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Employment'
+}
+let testEventObject8 = {
+  id: 8,
+  title: 'Covid Testing',
+  start: '2021-11-26T14:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Healthcare'
+}
+let testEventObject9 = {
+  id: 9,
+  title: 'Family Event',
+  start: '2021-11-27T16:00:00',
+  location:'test location',
+  description: 'test description',
+  category: 'Family'
+}
+
   
 export function writeEventData(eventObject){
     const db = getDatabase();
@@ -63,12 +90,15 @@ export function writeEventData(eventObject){
       title: eventObject.title,
       start: eventObject.start,
       location: eventObject.location,
-      description: eventObject.description 
+      description: eventObject.description, 
+      category: eventObject.category
     });
   }
 writeEventData(testEventObject5)
 writeEventData(testEventObject6)
-
+writeEventData(testEventObject7)
+writeEventData(testEventObject8)
+writeEventData(testEventObject9)
 
 
 
@@ -114,26 +144,36 @@ let formId = 1;
   });
 */
 
-document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,date,startTime,endTime,description,category) {
+function getRandomInt() {
+  return Math.floor(Math.random() * 1000000);
+}
+
+console.log('randomInt=', getRandomInt())
+
+document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,eventName, date,startTime,endTime,description,category) {
     const db=getDatabase()
-    let formId=3
+    let eventId=getRandomInt()
     name= document.getElementById('name').value
     organization= document.getElementById('organization').value
     address= document.getElementById('address').value
     phoneNumber= document.getElementById('phone').value
+    eventName= document.getElementById('event-name').value
     date= document.getElementById('date').value
     startTime= document.getElementById('start-time').value
+    let start = date + "T" + startTime + ":00"
     endTime= document.getElementById('end-time').value
     description= document.getElementById('description').value
     category=document.getElementById('SelectOption').value
-        set(ref(db,'form/'+ formId), {
+        set(ref(db,'events/'+ eventId), {
             fullname : name,
             organization : organization ,
             address : address ,
             phone: phoneNumber,
+            title: eventName,
             date: date,
-            startTime: startTime,
-            endTime: endTime,
+            // startTime: startTime,
+            start: start,
+            // endTime: endTime,
             description: description,
             category: category
             });}

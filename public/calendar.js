@@ -14,31 +14,43 @@ import './main.css';
 // import {writeEventData} from '../db.js'
 import { eventsPromise } from '../db';
 
+
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
+  let categorySelected = {
+
+  }
+  
+  
+  
+  //TODO: make array of events to add after submit button is pressed
+  //pass events to newEventsArray on condition that event.category=checkbox.id 
+  //for checked=true checkbox
+  //call updateEvents(newEventsArray) or something similar on submit button click
+  
   // var calendarModal = document.getElementById('calendarModal')
   // console.log(calendarModal)
   
   // const onEventClick = function(info) {
-  //   console.log('event clicked', info.event.title)
-  //   // console.log(calendarModal)
-  //   // $('#modalTitle').html('test');
-  //   // $('#modalBody').html('test');
-  //   // $('#calendarModal').modal();
-  // }
-  
-  var calendar = new Calendar(calendarEl, {
-    eventDisplay: 'block',
-    // initialView: 'listWeek',
-    plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrapPlugin ],
-    themeSystem: 'bootstrap',
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,listWeek'
-    },  
-    eventClick: function(info) {
-
+    //   console.log('event clicked', info.event.title)
+    //   // console.log(calendarModal)
+    //   // $('#modalTitle').html('test');
+    //   // $('#modalBody').html('test');
+    //   // $('#calendarModal').modal();
+    // }
+    
+    var calendar = new Calendar(calendarEl, {
+      eventDisplay: 'block',
+      // initialView: 'listWeek',
+      plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrapPlugin ],
+      themeSystem: 'bootstrap',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,listWeek'
+      },  
+      eventClick: function(info) {
+        
       },
       navLinks: true, // can click day/week names to navigate views
       editable: true,
@@ -61,26 +73,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       },
       // events: [
-      //   {
-      //     title: 'Food Pantry',
-      //     start: '2021-11-10T11:30:00'
-      //   },  
-      //   {
-      //     title: 'Clothing Drive',
-      //     start: '2021-11-10T11:00:00'
-      //   },  
-      //   {
-      //     title: 'Hiring Event',
-      //     start: '2021-11-11T09:00:00'
-      //   }
-      // ]  
-    });  
-  
-  let eventsArray = [];
-  eventsPromise.then((events)=> {
-    eventsArray = Object.values(events)
-    console.log('events array:', eventsArray)
-    calendar.addEventSource(eventsArray)
+        //   {
+          //     title: 'Food Pantry',
+          //     start: '2021-11-10T11:30:00'
+          //   },  
+          //   {
+            //     title: 'Clothing Drive',
+            //     start: '2021-11-10T11:00:00'
+            //   },  
+            //   {
+              //     title: 'Hiring Event',
+              //     start: '2021-11-11T09:00:00'
+              //   }
+              // ]  
+            });  
+            
+            let eventsArray = [];
+            
+            eventsPromise.then((events)=> {
+              console.log('events array:', eventsArray)
+              
+              eventsArray = Object.values(events)
+              calendar.addEventSource(eventsArray)
+              
+              document.getElementById('Housing').addEventListener("click", isChecked);
+              document.getElementById('Employment').addEventListener("click", isChecked);
+              document.getElementById('Education').addEventListener("click", isChecked);
+              document.getElementById('Financial').addEventListener("click", isChecked);
+              document.getElementById('Healthcare').addEventListener("click", isChecked);
+              document.getElementById('Mental').addEventListener("click", isChecked);
+              document.getElementById('Family').addEventListener("click", isChecked);
+              document.getElementById('Children').addEventListener("click", isChecked);
+              document.getElementById('Other').addEventListener("click", isChecked);
+              function isChecked(){
+                if(this.checked){
+                  console.log('checked')
+                  console.log(this.id)
+                } else {
+                  console.log('not checked')
+                };
+                categorySelected[this.id]=this.checked
+                updateCalendar()
+                console.log(categorySelected)
+              }
+              
+              let filteredEvents = [];
+              function updateCalendar(){
+                for(let i in eventsArray){
+                  let currentEvent=(eventsArray[i])
+                  if(categorySelected[currentEvent.category]==true){
+                    filteredEvents.push(currentEvent)
+                    console.log(filteredEvents)
+                  }
+                }
+                calendar.removeAllEvents()
+                calendar.addEventSource(filteredEvents)
+                filteredEvents = []
+                // filteredEvents = []
+                // console.log(filteredEvents)
+              }
   })
   calendar.render()
   // console.log(calendar.getEvents())
