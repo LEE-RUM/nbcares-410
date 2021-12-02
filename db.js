@@ -144,51 +144,5 @@ let formId = 1;
   });
 */
 
-function getRandomInt() {
-  return Math.floor(Math.random() * 1000000);
-}
-
-console.log('randomInt=', getRandomInt())
-
-document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,eventName, date,startTime,endTime,description,category) {
-    const db=getDatabase()
-    let eventId=getRandomInt()
-    name= document.getElementById('name').value
-    organization= document.getElementById('organization').value
-    address= document.getElementById('address').value
-    phoneNumber= document.getElementById('phone').value
-    eventName= document.getElementById('event-name').value
-    date= document.getElementById('date').value
-    startTime= document.getElementById('start-time').value
-    let start = date + "T" + startTime + ":00"
-    endTime= document.getElementById('end-time').value
-    description= document.getElementById('description').value
-    category=document.getElementById('SelectOption').value
-        set(ref(db,'events/'+ eventId), {
-            fullname : name,
-            organization : organization ,
-            address : address ,
-            phone: phoneNumber,
-            title: eventName,
-            date: date,
-            // startTime: startTime,
-            start: start,
-            // endTime: endTime,
-            description: description,
-            category: category
-            });}
-
-
-
-
-
-
-
-)
-
-
-
-
-
 
 
