@@ -1,5 +1,5 @@
 import { Calendar } from '@fullcalendar/core';
-import interactionPlugin from '@fullcalendar/interaction';
+import interactionPlugin, { PointerDragging } from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
@@ -13,10 +13,50 @@ import './main.css';
 // import './dist/main.css'
 // import {writeEventData} from '../db.js'
 import { eventsPromise } from '../db';
+import { getDatabase, ref, set, get, child } from "firebase/database";
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 1000000);
+}
+if(document.getElementById('modalSub')){
+
+  document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,eventName, date,startTime,endTime,description,category) {
+    const db=getDatabase()
+    let eventId=getRandomInt()
+    name= document.getElementById('name').value
+    organization= document.getElementById('organization').value
+    address= document.getElementById('address').value
+    phoneNumber= document.getElementById('phone').value
+    eventName= document.getElementById('event-name').value
+    date= document.getElementById('date').value
+    startTime= document.getElementById('start-time').value
+    let start = date + "T" + startTime + ":00"
+    let status = 'Pending Approval'
+    endTime= document.getElementById('end-time').value
+    description= document.getElementById('description').value
+    category=document.getElementById('SelectOption').value
+    set(ref(db,'events/'+ eventId), {
+      status: status,
+      fullname : name,
+      organization : organization ,
+      address : address ,
+      phone: phoneNumber,
+      title: eventName,
+      date: date,
+      // startTime: startTime,
+      start: start,
+      // endTime: endTime,
+      description: description,
+      category: category
+    });}
+    
+    )
+  }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
   let categorySelected = {
 
   }
