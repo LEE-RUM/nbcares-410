@@ -158,6 +158,7 @@ if(document.getElementById('modalSub')){
               document.getElementById('Family').addEventListener("click", isChecked);
               document.getElementById('Children').addEventListener("click", isChecked);
               document.getElementById('Other').addEventListener("click", isChecked);
+              document.getElementById('Food').addEventListener("click", isChecked);
               function isChecked(){
                 if(this.checked){
                   console.log('checked')
