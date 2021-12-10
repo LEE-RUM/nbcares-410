@@ -47,7 +47,7 @@ if(document.getElementById('modalSub')){
       date: date,
       // startTime: startTime,
       start: start,
-      // endTime: endTime,
+      endTime: endTime,
       description: description,
       category: category
     });}
@@ -159,6 +159,8 @@ if(document.getElementById('modalSub')){
               document.getElementById('Children').addEventListener("click", isChecked);
               document.getElementById('Other').addEventListener("click", isChecked);
               document.getElementById('Food').addEventListener("click", isChecked);
+              document.getElementById('Art').addEventListener("click", isChecked);
+              document.getElementById('Management').addEventListener("click", isChecked);
               function isChecked(){
                 if(this.checked){
                   console.log('checked')

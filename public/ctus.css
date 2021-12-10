@@ -8,3 +8,14 @@ body{
 .footer{
     background-color: aliceblue;
 }
+#my-slider{
+    align-content: center;
+    margin-inline: auto;
+    width: 80%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.fa-check{
+    color: green;
+}

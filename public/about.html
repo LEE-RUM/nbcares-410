@@ -8,76 +8,199 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+     <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <!-- CSS File -->
+    <link rel="icon" type="image/x-icon" href="images/KO_NB_Cares_logo.png">
     <link rel="stylesheet" href="ctus.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <title>About US</title>
 </head>
 <body>
-<section id="hero">
-<!-- Nav bar starts -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light pt-2 pb-4">
-            <div class="container-xxl">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #834655;;">
+        <div class="container-xxl">
 
-                <a class="navbar-brand"  href="#">
-                    <img src="images/NB_Cares_logo_black.png" alt="" height="70">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <a class="navbar-brand"  href="index.html">
+            <img src="images/KO_NB_Cares_logo.png" alt="" height="70">
+            </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse justify-content-end align-center " id="main-nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#resources">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="calendar.html">Calendar</a>
-                        </li>
-                       <!-- <li class="nav-item">
-                            <a class="btn btn-primary" href="login.html">LOGIN</a>
-                        </li>-->
-                    </ul>
+            <div class="collapse navbar-collapse justify-content-end " id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="calendar.html">Calendar</a>
+                    </li>
+                    <li id="admin-button" class="nav-item">
+                        <a class="nav-link text-white" href="eventControl.html">Admin</a>
+                    </li>
+                    <li id="register-button" class="nav-item">
+                        <a class="nav-link text-white" href="#" id="modalbtn" data-bs-toggle="modal" data-bs-target="#modalForm">Register</a>
+                    </li>
+                    <li id="login-button" class="nav-item">
+                        <a  class="nav-link text-white" href="#" id="modalbtn"  data-bs-toggle="modal" data-bs-target="#modalFormL" >Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id='logout-button' class="logout">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Staff member with no account? Register below!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-        </nav>
-        <!-- Nav bar ends -->
-</section>
+                <div class="modal-body">
+                        <div class="container w-50 pt-3 pb-5 my-3">
+                            <form class="signup">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control mb-3" name="email" placeholder="email@email.com">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control mb-3" name="password" placeholder="******">
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Register</button>
+                                    </div>
+                            </form>
+                        </div>
 
-<div class="container border border-0 shadow bg-body rounded pt-4 mb-5 mt-5">
-    <div class="row d-flex lead justify-content-center">
-    <p class="lead"><b>The Housing Authority of the City of New Britain is a public agency located in New Britain, a city of 70,000 people situated on approximately 13.1 square miles in central Connecticut.</b></p>
-    <p class="lead"><b>The Housing Authority manages 804 low-income housing units at seven developments throughout the city, half of which house the elderly and/or disabled with the remainder reserved for use by families.</b></p>
-    <p class="lead"><b>In addition, the Housing Authority administers Section 8 Tenant Based Assistance Vouchers which provide rental assistance to 851 families residing in the private market in New Britain.</b></p>
-    </div>
-</div>
-
-
-    <div class="container border border-0 shadow p-3 mb-5 bg-body rounded">
-        <div class="row d-flex justify-content-center">
-            <div class="col">
-            <h1 class="text-center text-xl-start fw-bold text-dark text-opacity-75">Our Vision</h1>
-            <ul>
-                <li class="lead">Greater Self-efficiency</li>
-                <li class="lead">Increases Assets</li>
-                <li class="lead">Expand Network of Resources</li>
-                <li class="lead">Healthy Vital Signs</li>
-                <li class="lead">Decreases Barriers</li>
-                <li class="lead">Improved quality of life assessments</li>
-            </ul>
-            </div>
-            <div class="col">
-            <h1 class="text-center text-xl-start fw-bold text-dark text-opacity-75">Mission</h1>
-            <p class="lead"><b>A network of agencies delivering coordinated services to people working towards self-sufficiency</b></p>
+                        <div class="modal-footer" style="display: none;">
+                            <button type="submit" id="modalSub" class="btn btn-warning text-center">Submit</button>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalFormL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Have an account? Log in below</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container w-50 pt-3 pb-5 my-3">
+                        <form class="login">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control mb-3" name="email" placeholder="email@email.com">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control mb-3" name="password" placeholder="******">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+
+                        <div class="modal-footer" style="display: none;">
+                            <button type="submit" id="modalSub" class="btn btn-warning text-center">Submit</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="display-4 text-center">About Us</h1>
+        <hr>
+    </div>
+
+
+    <div class="container border border-0 bg-body rounded mb-5 mt-5">
+        <div class="row d-flex lead justify-content-center">
+            <p class="lead">The NB CARES Program – or Collaborating Actively on Resident Empowerment and Success in New Britain kicked off as a pilot in 2020. Additional partners have been added to allow city residents a “Choose Your Own Adventure” that results in increasing or achieving self-sufficiency – which is a decreased reliance on federal and state aid.</p>
+        </div>
+    </div>
+
+      <div class="container border border-0 bg-body rounded mb-5 mt-5">
+        <div class="row d-flex lead justify-content-center">
+            <p class="lead">Our Vision Statement is simple: New Britain residents will achieve positive life outcomes by increasing social and personal capita</p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="my-slider" class="carousel slide" data-ride="carousel">
+
+
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/IMG_0229.JPG" alt="First slide" class="img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img  src="images/IMG_0668.JPG" alt="Second slide" class="img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/IMG_2155.JPG" alt="Third slide" class="img-fluid" >
+                        </div>
+                         <div class="carousel-item">
+                            <img src="images/IMG_0231.JPG" alt="Fourth slide" class="img-fluid" >
+                        </div>
+
+                     </div>
+                     <a class="carousel-control-prev" href="#my-slider" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     </a>
+                    <a class="carousel-control-next" href="#my-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container mb-5">
+        <h1 class="display-4 text-center">WIIFM – What’s In It For Me? </h1>
+        <hr>
+    </div>
+
+     <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h1>Patricipants</h1>
+                <ul class="list-unstyled fw-bold">
+                    <li><i class="fas fa-check"></i>A warm handoff</li>
+                    <li><i class="fas fa-check"></i>A wide array of services</li>
+                    <li><i class="fas fa-check"></i>Increased social capital</li>
+                    <li><i class="fas fa-check"></i>A community calendar</li>
+                    <li><i class="fas fa-check"></i>NB Resource Menu</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>Agencies</h1>
+                <ul class="list-unstyled fw-bold">
+                    <li><i class="fas fa-check"></i>Program marketing</li>
+                    <li><i class="fas fa-check"></i>Professional resources</li>
+                    <li><i class="fas fa-check"></i>Increased social capital</li>
+                    <li><i class="fas fa-check"></i>Data</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
 
 <!-- <div class="container border border-0 shadow bg-body rounded pt-4 mb-5 mt-5">
     <div class="row d-flex lead justify-content-center">
@@ -102,6 +225,8 @@
             </div>
         </div>
     </div> -->
+
+    <script src='dist/main.js'></script>
 
 </body>
 </html>
