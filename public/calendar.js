@@ -47,7 +47,7 @@ if(document.getElementById('modalSub')){
       date: date,
       // startTime: startTime,
       start: start,
-      // endTime: endTime,
+      endTime: endTime,
       description: description,
       category: category
     });}

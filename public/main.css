@@ -18,6 +18,9 @@
   #events-filtering{
     margin-top: 15%;
     display: flex;
+    padding-right:20px;
+
+
   }
   @media screen and (max-width:550px) {
     #calendar-container{
@@ -52,10 +55,9 @@
 }
 #modalbtn{
   font-size: 12px ;
-  float: right;
-  position: relative;
-  right: 180px;
-  top: 10px;
+  margin-bottom: 30px;
+  color: #578bbb;
+  
 }
 
 body{
