@@ -38,7 +38,15 @@
   
   #calendar{
     height: 100%;
-    width: 100%
+    width: 100%;
+    margin-bottom: 20px
+  }
+  #modalbtn{
+    font-size: 12px ;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  
+    
   }
   } 
   /* #filters {
