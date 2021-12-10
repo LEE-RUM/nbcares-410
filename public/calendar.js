@@ -33,12 +33,12 @@ if(document.getElementById('modalSub')){
     date= document.getElementById('date').value
     startTime= document.getElementById('start-time').value
     let start = date + "T" + startTime + ":00"
-    let status = 'Pending Approval'
+    // let status = 'Pending Approval'
     endTime= document.getElementById('end-time').value
     description= document.getElementById('description').value
     category=document.getElementById('SelectOption').value
     set(ref(db,'events/'+ eventId), {
-      status: status,
+      // status: status,
       fullname : name,
       organization : organization ,
       address : address ,
@@ -47,7 +47,7 @@ if(document.getElementById('modalSub')){
       date: date,
       // startTime: startTime,
       start: start,
-      endTime: endTime,
+      // endTime: endTime,
       description: description,
       category: category
     });}
