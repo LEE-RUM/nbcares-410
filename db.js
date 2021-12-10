@@ -43,7 +43,7 @@ getUserData(userId)
 let testEventObject5 = {
   id: 5,
   title: 'Education Event',
-  start: '2021-11-25T10:00:00',
+  start: '2021-12-07T10:00:00',
   location:'test location',
   description: 'test description',
   category: 'Education'
@@ -52,7 +52,7 @@ let testEventObject5 = {
 let testEventObject6 = {
   id: 6,
   title: 'Housing Event',
-  start: '2021-11-23T14:00:00',
+  start: '2021-12-13T14:00:00',
   location:'test location',
   description: 'test description',
   category: 'Housing'
@@ -60,7 +60,7 @@ let testEventObject6 = {
 let testEventObject7 = {
   id: 7,
   title: 'Job Fair',
-  start: '2021-11-25T12:00:00',
+  start: '2021-12-05T12:00:00',
   location:'test location',
   description: 'test description',
   category: 'Employment'
@@ -68,7 +68,7 @@ let testEventObject7 = {
 let testEventObject8 = {
   id: 8,
   title: 'Covid Testing',
-  start: '2021-11-26T14:00:00',
+  start: '2021-12-06T14:00:00',
   location:'test location',
   description: 'test description',
   category: 'Healthcare'
@@ -76,7 +76,7 @@ let testEventObject8 = {
 let testEventObject9 = {
   id: 9,
   title: 'Family Event',
-  start: '2021-11-27T16:00:00',
+  start: '2021-12-17T16:00:00',
   location:'test location',
   description: 'test description',
   category: 'Family'

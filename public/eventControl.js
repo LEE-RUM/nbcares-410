@@ -7,7 +7,7 @@ eventsPromise.then((events)=> {
     eventsArray = Object.values(events)
     console.log('all events:', eventsArray)
     let titles = document.getElementsByClassName('event-list-title')
-    let locations
+    let locations = document.getElementsByClassName('')
     console.log(titles[0])
     for(let i = 0; i<titles.length; i++){
         titles[i].innerText=eventsArray[i].title
