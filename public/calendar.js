@@ -11,7 +11,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './main.css';
 // import './dist/main.css'
-// import {writeEventData} from '../db.js'
 import { eventsPromise } from '../db';
 import { getDatabase, ref, set, get, child } from "firebase/database";
 
@@ -24,7 +23,7 @@ if(document.getElementById('modalSub')){
 
   document.getElementById('modalSub').addEventListener('click',function writeFormData(name,organization,address,phoneNumber,eventName, date,startTime,endTime,description,category) {
     const db=getDatabase()
-    let eventId=getRandomInt()
+    let eventId=getRandomInt()//create random id
     name= document.getElementById('name').value
     organization= document.getElementById('organization').value
     address= document.getElementById('address').value
@@ -32,13 +31,14 @@ if(document.getElementById('modalSub')){
     eventName= document.getElementById('event-name').value
     date= document.getElementById('date').value
     startTime= document.getElementById('start-time').value
-    let start = date + "T" + startTime + ":00"
-    // let status = 'Pending Approval'
+    let start = date + "T" + startTime + ":00" 
+    let isApproved = false //default status for newly submitted events
     endTime= document.getElementById('end-time').value
     description= document.getElementById('description').value
     category=document.getElementById('SelectOption').value
+    //TODO: fix time inputs to accept am/pm instead of 24h clock
     set(ref(db,'events/'+ eventId), {
-      // status: status,
+      isApproved : isApproved,
       fullname : name,
       organization : organization ,
       address : address ,
@@ -75,21 +75,7 @@ if(document.getElementById('modalSub')){
     }
   })
   
-  //TODO: make array of events to add after submit button is pressed
-  //pass events to newEventsArray on condition that event.category=checkbox.id 
-  //for checked=true checkbox
-  //call updateEvents(newEventsArray) or something similar on submit button click
-  
-  // var calendarModal = document.getElementById('calendarModal')
-  // console.log(calendarModal)
-  
-  // const onEventClick = function(info) {
-    //   console.log('event clicked', info.event.title)
-    //   // console.log(calendarModal)
-    //   // $('#modalTitle').html('test');
-    //   // $('#modalBody').html('test');
-    //   // $('#calendarModal').modal();
-    // }
+
     
     var calendar = new Calendar(calendarEl, {
       eventDisplay: 'block',
@@ -111,6 +97,7 @@ if(document.getElementById('modalSub')){
       displayEventTime: true,
       nowIndicator: true,
       eventDidMount: function(info) {
+        //in the future, add location, time, etc to the tooltip
         var tooltip = new Tooltip(info.el, {
           title: info.event.title,
           placement: 'top',

@@ -43,6 +43,7 @@ getUserData(userId)
 let testEventObject5 = {
   id: 5,
   title: 'Education Event',
+  isApproved: true,
   start: '2021-12-07T10:00:00',
   location:'test location',
   description: 'test description',
@@ -52,6 +53,7 @@ let testEventObject5 = {
 let testEventObject6 = {
   id: 6,
   title: 'Housing Event',
+  isApproved: true,
   start: '2021-12-13T14:00:00',
   location:'test location',
   description: 'test description',
@@ -60,6 +62,7 @@ let testEventObject6 = {
 let testEventObject7 = {
   id: 7,
   title: 'Job Fair',
+  isApproved: true,
   start: '2021-12-05T12:00:00',
   location:'test location',
   description: 'test description',
@@ -68,6 +71,7 @@ let testEventObject7 = {
 let testEventObject8 = {
   id: 8,
   title: 'Covid Testing',
+  isApproved: true,
   start: '2021-12-06T14:00:00',
   location:'test location',
   description: 'test description',
@@ -76,6 +80,7 @@ let testEventObject8 = {
 let testEventObject9 = {
   id: 9,
   title: 'Family Event',
+  isApproved: true,
   start: '2021-12-17T16:00:00',
   location:'test location',
   description: 'test description',
@@ -88,6 +93,7 @@ export function writeEventData(eventObject){
     set(ref(db, 'events/' + eventObject.id), {
       id: eventObject.id,
       title: eventObject.title,
+      isApproved: eventObject.isApproved,
       start: eventObject.start,
       location: eventObject.location,
       description: eventObject.description, 
