@@ -134,7 +134,8 @@ if(document.getElementById('modalSub')){
               console.log('events array:', eventsArray)
               
               eventsArray = Object.values(events)
-              calendar.addEventSource(eventsArray)
+              let approvedEvents = eventsArray.filter(event => event.isApproved)
+              calendar.addEventSource(approvedEvents)
               
               document.getElementById('Housing').addEventListener("click", isChecked);
               document.getElementById('Employment').addEventListener("click", isChecked);

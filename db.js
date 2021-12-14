@@ -39,7 +39,7 @@ function writeUserData(userId, name, email) {
 
 getUserData(userId)
 
-
+//test events
 let testEventObject5 = {
   id: 5,
   title: 'Education Event',
@@ -107,9 +107,6 @@ writeEventData(testEventObject8)
 writeEventData(testEventObject9)
 
 
-
-  // let eventId = 3;
-
 export let eventsPromise = get(child(dbRef, `events/`)).then((snapshot) => {
     if (snapshot.exists()) {
       console.log('event data should appear here:')
@@ -122,8 +119,6 @@ export let eventsPromise = get(child(dbRef, `events/`)).then((snapshot) => {
     console.error(error);
 }); 
 
-// getAllEvents()
-  // });
 
 /*
 //Testing Form Data
