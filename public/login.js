@@ -73,6 +73,9 @@ onAuthStateChanged(auth, (user)=>{
     document.getElementById('login-button').style.display='none'
     document.getElementById('admin-button').style.display='block'
     // document.getElementById('reso').style.display='block'
+    document.getElementById('nava').style.display='block'
+    document.getElementById('pane').style.display='block'
+    document.getElementById('notin').style.display='none'
     console.log(user)
   } else{
     document.getElementById('logout-button').style.display='none'
@@ -81,6 +84,9 @@ onAuthStateChanged(auth, (user)=>{
     document.getElementById('register-button').style.display='block'
     document.getElementById('admin-button').style.display='none'
     // document.getElementById('reso').style.display='none'
+    document.getElementById('nava').style.display='none'
+    document.getElementById('pane').style.display='none'
+    document.getElementById('notin').style.display='block'
     console.log('user signed out')
   }
 })
